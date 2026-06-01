@@ -10,9 +10,9 @@ VITON-HD 착용 이미지에서 상의의 핏을 `tight`, `regular`, `oversized`
 
 | 클래스 | 이미지 수 |
 | --- | ---: |
-| tight | 151 |
+| tight | 150 |
 | regular | 150 |
-| oversized | 149 |
+| oversized | 150 |
 | 총합 | 450 |
 
 최종 모델은 `OpenAI CLIP ViT-B/32` 임베딩과 `Linear SVM(C=15)` 조합입니다.
@@ -43,7 +43,6 @@ KNN baseline 대비 성능은 다음과 같습니다.
 ├── README.md
 ├── DATASET_AND_LICENSE.md
 ├── requirements.txt
-├── environment.yaml
 ├── fit_label_experiment_colab.ipynb
 ├── dataset/
 │   ├── tight/
@@ -54,7 +53,7 @@ KNN baseline 대비 성능은 다음과 같습니다.
 │   ├── openclip_vit_l14/
 │   └── dinov2_vit_b14/
 ├── models/
-│   └── experiment_7/
+│   └── experiment_*/
 └── results/
     └── experiment_*/
 ```
@@ -77,13 +76,6 @@ KNN baseline 대비 성능은 다음과 같습니다.
 ```bash
 pip install -r requirements.txt
 pip install git+https://github.com/openai/CLIP.git
-```
-
-### conda 사용
-
-```bash
-conda env create -f environment.yaml
-conda activate fit-label-classification
 ```
 
 Colab에서는 notebook 첫 셀에서 필요한 패키지를 설치하도록 구성할 수 있습니다.
