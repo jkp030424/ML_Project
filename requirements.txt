@@ -1,0 +1,15 @@
+numpy
+pandas
+matplotlib
+seaborn
+pillow
+tqdm
+joblib
+scikit-learn
+xgboost
+torch
+torchvision
+open_clip_torch
+ftfy
+regex
+git+https://github.com/openai/CLIP.git
