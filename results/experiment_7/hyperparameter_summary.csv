@@ -1,0 +1,7 @@
+﻿experiment,classifier,change_note,important_parameters
+experiment_7,knn_baseline,baseline 유지,"{""n_neighbors"": 5, ""weights"": ""distance"", ""metric"": ""cosine""}"
+experiment_7,logistic_regression,baseline 유지,"{""C"": 1.0, ""penalty"": ""l2"", ""solver"": ""lbfgs"", ""max_iter"": 1000, ""class_weight"": null}"
+experiment_7,linear_svm,experiment_6의 C=30.0에서 C=15.0으로 낮춤. C=10.0과 C=30.0 사이의 중간 탐색,"{""estimator__C"": 15.0, ""estimator__class_weight"": null, ""estimator__max_iter"": 5000, ""cv"": 3}"
+experiment_7,rbf_svm,baseline 유지,"{""estimator__kernel"": ""rbf"", ""estimator__C"": 1.0, ""estimator__gamma"": ""scale"", ""estimator__class_weight"": null, ""cv"": 3}"
+experiment_7,random_forest,baseline 유지,"{""n_estimators"": 500, ""max_depth"": 8, ""min_samples_leaf"": 5, ""min_samples_split"": 10, ""max_features"": ""sqrt"", ""class_weight"": null}"
+experiment_7,xgboost,baseline 유지,"{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.03, ""subsample"": 0.8, ""colsample_bytree"": 0.7, ""min_child_weight"": 5, ""reg_alpha"": 0.1, ""reg_lambda"": 2.0}"

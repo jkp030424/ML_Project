@@ -1,0 +1,7 @@
+﻿experiment,classifier,change_note,important_parameters
+experiment_2,knn_baseline,baseline 유지,"{""n_neighbors"": 5, ""weights"": ""distance"", ""metric"": ""cosine""}"
+experiment_2,logistic_regression,baseline 유지,"{""C"": 1.0, ""penalty"": ""l2"", ""solver"": ""lbfgs"", ""max_iter"": 1000, ""class_weight"": null}"
+experiment_2,linear_svm,baseline 유지,"{""estimator__C"": 0.1, ""estimator__class_weight"": null, ""estimator__max_iter"": 5000, ""cv"": 3}"
+experiment_2,rbf_svm,baseline 유지,"{""estimator__kernel"": ""rbf"", ""estimator__C"": 1.0, ""estimator__gamma"": ""scale"", ""estimator__class_weight"": null, ""cv"": 3}"
+experiment_2,random_forest,"max_depth=8 → 5, min_samples_leaf=5 → 10, min_samples_split=10 → 20","{""n_estimators"": 500, ""max_depth"": 5, ""min_samples_leaf"": 10, ""min_samples_split"": 20, ""max_features"": ""sqrt"", ""class_weight"": null}"
+experiment_2,xgboost,"max_depth=3 → 2, min_child_weight=5 → 10, reg_lambda=2.0 → 5.0","{""n_estimators"": 200, ""max_depth"": 2, ""learning_rate"": 0.03, ""subsample"": 0.8, ""colsample_bytree"": 0.7, ""min_child_weight"": 10, ""reg_alpha"": 0.1, ""reg_lambda"": 5.0}"

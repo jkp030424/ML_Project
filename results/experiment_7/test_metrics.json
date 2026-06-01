@@ -1,0 +1,56 @@
+{
+  "experiment_name": "experiment_7",
+  "selection_method": "manual_selection_after_cv_hyperparameter_search",
+  "best_encoder": "clip_vit_b32",
+  "best_classifier": "linear_svm",
+  "final_classifier_params": {
+    "classifier": "linear_svm",
+    "C": 15.0,
+    "class_weight": null,
+    "max_iter": 5000,
+    "calibration_cv": 3,
+    "random_state": 42
+  },
+  "selection_note": "Experiment 7 was selected as the final model based on stratified 5-fold CV. Linear SVM performance improved as C increased up to 15, but decreased again at C=20 and C=30. Therefore, C=15 was selected as the best regularization strength.",
+  "metrics": {
+    "accuracy": 0.9264705882352942,
+    "macro_f1": 0.9268285693817608,
+    "ordinal_mae": 0.07352941176470588,
+    "recall_tight": 0.9565217391304348,
+    "recall_regular": 0.9130434782608695,
+    "recall_oversized": 0.9090909090909091
+  },
+  "classification_report": {
+    "tight": {
+      "precision": 1.0,
+      "recall": 0.9565217391304348,
+      "f1-score": 0.9777777777777777,
+      "support": 23.0
+    },
+    "regular": {
+      "precision": 0.875,
+      "recall": 0.9130434782608695,
+      "f1-score": 0.8936170212765957,
+      "support": 23.0
+    },
+    "oversized": {
+      "precision": 0.9090909090909091,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.9090909090909091,
+      "support": 22.0
+    },
+    "accuracy": 0.9264705882352942,
+    "macro avg": {
+      "precision": 0.9280303030303031,
+      "recall": 0.9262187088274044,
+      "f1-score": 0.9268285693817608,
+      "support": 68.0
+    },
+    "weighted avg": {
+      "precision": 0.9283088235294118,
+      "recall": 0.9264705882352942,
+      "f1-score": 0.9270894173272145,
+      "support": 68.0
+    }
+  }
+}

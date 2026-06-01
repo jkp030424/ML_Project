@@ -1,0 +1,6 @@
+﻿experiment,encoder,classifier,path,true_id,pred_id,true_label,pred_label,is_correct,ordinal_error
+experiment_7,clip_vit_b32,linear_svm,/content/drive/MyDrive/ML/dataset/oversized/00014_00.jpg,2,1,oversized,regular,False,1
+experiment_7,clip_vit_b32,linear_svm,/content/drive/MyDrive/ML/dataset/oversized/10820_00.jpg,2,1,oversized,regular,False,1
+experiment_7,clip_vit_b32,linear_svm,/content/drive/MyDrive/ML/dataset/regular/03276_00.jpg,1,2,regular,oversized,False,1
+experiment_7,clip_vit_b32,linear_svm,/content/drive/MyDrive/ML/dataset/regular/06476_00.jpg,1,2,regular,oversized,False,1
+experiment_7,clip_vit_b32,linear_svm,/content/drive/MyDrive/ML/dataset/tight/03857_00.jpg,0,1,tight,regular,False,1

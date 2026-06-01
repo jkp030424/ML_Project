@@ -1,0 +1,7 @@
+﻿experiment,classifier,change_note,important_parameters
+experiment_1,knn_baseline,"baseline: n_neighbors=5, weights=distance, metric=cosine","{""n_neighbors"": 5, ""weights"": ""distance"", ""metric"": ""cosine""}"
+experiment_1,logistic_regression,"baseline: C=1.0, penalty=l2","{""C"": 1.0, ""penalty"": ""l2"", ""solver"": ""lbfgs"", ""max_iter"": 1000, ""class_weight"": null}"
+experiment_1,linear_svm,baseline: C=0.1,"{""estimator__C"": 0.1, ""estimator__class_weight"": null, ""estimator__max_iter"": 5000, ""cv"": 3}"
+experiment_1,rbf_svm,"baseline: C=1.0, gamma=scale","{""estimator__kernel"": ""rbf"", ""estimator__C"": 1.0, ""estimator__gamma"": ""scale"", ""estimator__class_weight"": null, ""cv"": 3}"
+experiment_1,random_forest,"baseline: max_depth=8, min_samples_leaf=5, min_samples_split=10","{""n_estimators"": 500, ""max_depth"": 8, ""min_samples_leaf"": 5, ""min_samples_split"": 10, ""max_features"": ""sqrt"", ""class_weight"": null}"
+experiment_1,xgboost,"baseline: max_depth=3, learning_rate=0.03, min_child_weight=5","{""n_estimators"": 200, ""max_depth"": 3, ""learning_rate"": 0.03, ""subsample"": 0.8, ""colsample_bytree"": 0.7, ""min_child_weight"": 5, ""reg_alpha"": 0.1, ""reg_lambda"": 2.0}"
