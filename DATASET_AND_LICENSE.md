@@ -11,26 +11,34 @@
 
 ## 공개 저장소 업로드 주의사항
 
-본 과제 제출용 GitHub 저장소에는 재현을 위해 `dataset/` 폴더의 소규모 수동 라벨링 subset을 포함합니다. 단, 아래 파생 파일들은 포함하지 않는 것을 권장합니다.
+본 과제 제출용 GitHub 저장소에는 재현을 위해 아래 항목을 포함합니다.
 
 ```text
+dataset/
 embeddings/
-models/
+models/experiment_7/
+results/
+```
+
+각 항목의 의미는 다음과 같습니다.
+
+- `dataset/`: VITON-HD 이미지 일부를 수동 라벨링한 소규모 subset
+- `embeddings/`: 사전학습 인코더로 추출한 이미지 임베딩
+- `models/experiment_7/`: 최종 선택 모델 artifact
+- `results/`: 실험 결과 요약 및 평가 결과
+
+단, 아래 파일들은 원본 이미지가 직접 복사되거나 포함될 수 있으므로 공개 저장소에는 포함하지 않는 것을 권장합니다.
+
+```text
 results/*/misclassified_images/
 원본 이미지가 포함된 시각화 결과
 ```
 
-이유는 다음과 같습니다.
-
-1. `embeddings/`는 원본 이미지로부터 직접 생성된 파생 feature입니다.
-2. `models/`는 해당 데이터로 학습된 파생 artifact입니다.
-3. `misclassified_images/`와 일부 grid 이미지는 원본 이미지를 복사하거나 포함합니다.
-
-따라서 공개 저장소에는 코드, 설정 파일, `dataset/`의 소규모 수동 라벨링 subset, 그리고 원본 이미지를 포함하지 않는 결과 요약 파일만 포함하는 것을 권장합니다.
+`dataset/`, `embeddings/`, `models/experiment_7/`는 모두 VITON-HD 이미지 또는 그 파생 artifact입니다. 본 과제에서는 재현 편의를 위해 포함하지만, 이 파일들 역시 VITON-HD의 CC BY-NC 4.0 조건을 따르며 코드 라이선스에는 포함되지 않습니다.
 
 ## 코드 라이선스
 
-본 프로젝트의 코드에는 MIT License를 적용할 수 있습니다. 단, 이 라이선스는 코드에만 적용되며 VITON-HD 원본 이미지, 라벨링 이미지셋, 임베딩 파일, 학습된 모델 weight에는 자동으로 적용되지 않습니다.
+본 프로젝트의 코드에는 MIT License를 적용할 수 있습니다. 단, 이 라이선스는 코드에만 적용되며 VITON-HD 원본 이미지, `dataset/`의 라벨링 이미지셋, `embeddings/`의 파생 feature, `models/experiment_7/`의 학습된 모델 artifact에는 자동으로 적용되지 않습니다.
 
 ## 재현 방법
 

@@ -36,11 +36,12 @@ KNN baseline 대비 성능은 다음과 같습니다.
 
 ## 3. Repository Structure
 
-권장 저장소 구조는 아래와 같습니다.
+저장소 구조는 아래와 같습니다.
 
 ```text
 .
 ├── README.md
+├── DATASET_AND_LICENSE.md
 ├── requirements.txt
 ├── environment.yaml
 ├── fit_label_experiment_colab.ipynb
@@ -53,12 +54,19 @@ KNN baseline 대비 성능은 다음과 같습니다.
 │   ├── openclip_vit_l14/
 │   └── dinov2_vit_b14/
 ├── models/
-│   └── experiment_*/
+│   └── experiment_7/
 └── results/
     └── experiment_*/
 ```
 
-본 과제 제출용 저장소에는 바로 실행 가능한 재현을 위해 수동 라벨링한 소규모 `dataset/` subset을 포함합니다. 단, `embeddings/`, `models/`, 원본 이미지가 복사된 분석 결과 폴더는 제외하는 것을 권장합니다. 자세한 이유는 [데이터셋 및 라이선스](#8-데이터셋-및-라이선스)를 참고하세요.
+본 과제 제출용 저장소에는 바로 실행 가능한 재현을 위해 수동 라벨링한 소규모 `dataset/` subset과 실험 결과 확인에 필요한 일부 artifact를 포함합니다.
+
+- `dataset/`: VITON-HD 이미지 일부를 수동 라벨링한 소규모 subset
+- `embeddings/`: 3개 인코더로 미리 추출한 train/test 임베딩
+- `models/experiment_7/`: 최종 선택 모델 artifact
+- `results/`: 실험 결과 요약, CV 결과, 최종 test 평가 결과
+
+단, `dataset/`, `embeddings/`, `models/`는 원본 VITON-HD 이미지 또는 그 파생 artifact이므로 VITON-HD의 CC BY-NC 4.0 조건을 따릅니다. 자세한 내용은 [데이터셋 및 라이선스](#8-데이터셋-및-라이선스)를 참고하세요.
 
 ## 4. Installation
 
@@ -146,10 +154,16 @@ notebook을 위에서부터 실행합니다.
 13. Select Best Model
 ```
 
-임베딩은 한 번 생성한 뒤 재사용할 수 있습니다.
+저장소에 `embeddings/`가 포함된 경우, 임베딩 추출 단계를 다시 실행하지 않고 바로 CV 및 최종 평가를 진행할 수 있습니다.
 
 ```python
 FORCE_REBUILD_EMBEDDINGS = False
+```
+
+만약 `embeddings/`를 삭제하고 처음부터 재현하려면 아래처럼 설정한 뒤 9번 셀까지 실행하여 임베딩을 다시 생성합니다.
+
+```python
+FORCE_REBUILD_EMBEDDINGS = True
 ```
 
 ### 6.3 최종 모델 평가
@@ -215,11 +229,17 @@ GitHub에 포함:
 - README
 - requirements.txt 또는 environment.yaml
 - dataset/ 안의 소규모 수동 라벨링 subset
-- 결과 요약 CSV/그림 중 원본 이미지가 포함되지 않는 파일
+- embeddings/ 안의 사전 추출 임베딩
+- models/experiment_7/ 안의 최종 모델 artifact
+- results/ 안의 실험 결과 요약 파일
 
-GitHub에서 제외:
-- embeddings/
-- models/
+주의:
+- dataset/, embeddings/, models/는 VITON-HD 기반 파생물입니다.
+- 비상업적 학술/과제 재현 목적에 한해 사용해야 합니다.
+- 코드 라이선스는 이미지, 임베딩, 모델 weight에는 적용되지 않습니다.
+- 공개 범위가 수업 제출을 넘어서는 경우 원본 VITON-HD 사용 조건을 다시 확인해야 합니다.
+
+GitHub에서 제외 권장:
 - misclassified_images/
 - 원본 이미지가 포함된 figure/grid
 ```
